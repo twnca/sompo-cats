@@ -9,9 +9,7 @@ var blockQueue = new Queue();
 // var empty_block = { number: 0, transactions: [] }
 
 var ses = new Audio();
-var ses_path = './assets/sfx/Sompo_Mixdown_rev2/';
-var ses_files = ["Sompo_06.00-11.00.mp3", "Sompo_11.00-14.00.mp3", "Sompo_14.00-17.00.mp3", "Sompo_17.00-19.00.mp3", "Sompo_19.00-23.00.mp3", "Sompo_23.00-06.00.mp3"]
-var selected_audio = 5
+var ses_path = './assets/sfx/8Bit.mp3';
 
 var app;
 var sprite_container_1;
@@ -111,28 +109,8 @@ var jumpPath = [[1, 1], [2, 1], [2, 1],
 // var jumpPath = [[1, 1]]
 
 window.onload = function () {
-    var today = new Date();
-    var time = today.getHours()
 
-    var ses_files = ["Sompo_06.00-11.00.mp3", "Sompo_11.00-14.00.mp3", "Sompo_14.00-17.00.mp3", "Sompo_17.00-19.00.mp3", "Sompo_19.00-23.00.mp3", "Sompo_23.00-06.00.mp3"]
-    if (time >= 6 && time < 11) {
-        selected_audio = 0
-    }
-    else if (time >= 11 && time < 14) {
-        selected_audio = 1
-    }
-    else if (time >= 14 && time < 17) {
-        selected_audio = 2
-    }
-    else if (time >= 17 && time < 19) {
-        selected_audio = 3
-    }
-    else if (time >= 19 && time < 23) {
-        selected_audio = 4
-    }
-    ses.src = ses_path + ses_files[selected_audio]
     ses.preload;
-
 
     app = new PIXI.Application(
         {
